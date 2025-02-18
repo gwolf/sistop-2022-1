@@ -102,8 +102,8 @@ sistema y guardarla en un archivo, asumiendo que ya está creado el directorio
 `practicas/2/WolfGunnar` (con tu nombre, naturalmente 😉):
 
 	$ git checkout practica2a
-	$ mkdir practicas/2/WolfGunnar/A
-	$ date > practicas/2/WolfGunnar/A/hora_actual.txt
+	$ mkdir practicas/2/WolfGunnar
+	$ date > practicas/2/WolfGunnar/hora_actual.txt
 
 (Claro, en el directorio que corresponda a tu nombre, no en el mío).
 
@@ -115,7 +115,7 @@ adelante.
 
 Como ya sabemos, agrego el archivo y hago mi *commit*:
 
-	$ git add practicas/2/WolfGunnar/A/hora_actual.txt
+	$ git add practicas/2/WolfGunnar/hora_actual.txt
 	$ git commit -m 'Agrego el archivo de Gunnar Wolf para la práctica 2A'
 
 ## Vamos con la otra rama...
@@ -127,8 +127,8 @@ Ahora, vamos a la rama de la práctica 2B:
 Puedes verificar que tu archivo en el directorio de 2A no
 existe. ¡No te preocupes, no se ha perdido!
 
-	$ ls practicas/2/WolfGunnar/A/hora_actual.txt
-	ls: cannot access practicas/2/WolfGunnar/A/hora_actual.txt: No such file or directory
+	$ ls practicas/2/WolfGunnar/hora_actual.txt
+	ls: cannot access practicas/2/WolfGunnar/hora_actual.txt: No such file or directory
 
 Ahora, generemos un archivo ejemplo (toma en cuenta que tendrás que
 *volver a crear el directorio* con tu nombre). Puede ser cualquier
@@ -137,9 +137,8 @@ de tu CPU, según la presenta el sistema operativo (claro, el archivo
 `/proc/cpuinfo` sólo existe en Linux; ponle cualquier contenido que
 elijas en caso de estar usando otro sistema):
 
-	$ mkdir practicas/2/WolfGunnar/B
-	$ cp /proc/cpuinfo practicas/2/WolfGunnar/B/cpuinfo.txt
-	$ git add practicas/2/WolfGunnar/B/cpuinfo.txt
+	$ cp /proc/cpuinfo practicas/2/WolfGunnar/cpuinfo.txt
+	$ git add practicas/2/WolfGunnar/cpuinfo.txt
 	$ git commit -m 'Agrego el archivo de Gunnar Wolf para la práctica 2B'
 
 Puedes verificar que cada una de las prácticas contiene archivos
@@ -148,11 +147,11 @@ distintos en el mismo punto del directorio:
     $ cd practicas/2/WolfGunnar
     $ git checkout practica2a
     Switched to branch 'practica2a'
-    $ ls */*
+    $ ls
     hora_actual.txt
     $ git checkout practica2b
     Switched to branch 'practica2b'
-    $ ls */*
+    $ ls
     cpuinfo.txt
 
 ## Envía tus cambios mediante *dos* pull requests
